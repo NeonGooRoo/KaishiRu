@@ -14,7 +14,7 @@
 
 ## Где получить набор?
 
-Вы можете получить набор на [странице релизов](https://github.com/donkuri/Kaishi/releases/) этого GitHub или на [AnkiWeb](https://ankiweb.net/shared/info/1196762551), если набор не находится на проверке. **Набор поддерживается на Anki 2.1.50+**.
+Вы можете получить набор на [странице релизов](https://github.com/NeonGooRoo/KaishiRu/releases) этого GitHub или на [AnkiWeb](https://ankiweb.net/shared/info/1196762551), если набор не находится на проверке. **Набор поддерживается на Anki 2.1.50+**.
 
 ## Какие опции доступны для набора?
 
