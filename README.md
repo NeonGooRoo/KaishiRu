@@ -1,36 +1,38 @@
 # Kaishi 1.5k
 
-Welcome to the public repository for **Kaishi 1.5k**, a modern Anki deck made to introduce beginners to basic Japanese vocabulary. Kaishi 1.5k is highly modular and this page is dedicated to explaining various options you can use to change the deck to your liking. Here is what the front of the deck looks like:
+Данная страница переведена машинно и пока что почти не проходила модерацию.
 
-<img src="https://github.com/donkuri/Kaishi/blob/main/pics/kaishi-front.png" alt="Front of a Card in Kaishi 1.5k" style="width: 100%; height: auto">
+Добро пожаловать в публичный репозиторий **Kaishi 1.5k**, современного набора карточек Anki, созданного для ознакомления начинающих с базовой японской лексикой. Kaishi 1.5k обладает высокой модульностью, и эта страница посвящена объяснению различных опций, которые вы можете использовать для изменения набора по своему усмотрению. Вот как выглядит лицевая сторона набора:
 
-As you can see, both the word and the sentences are there but the word is highlighted in the sentence, making it easy to immediately isolate the important information. Once the word is known well, reviewing is faster because the word appears first. Here is the backside of the default deck:
+<img src="https://github.com/donkuri/Kaishi/blob/main/pics/kaishi-front.png" alt="Лицевая сторона карточки в Kaishi 1.5k" style="width: 100%; height: auto">
 
-<img src="https://github.com/donkuri/Kaishi/blob/main/pics/kaishi-back.png" alt="Back of a Card in Kaishi 1.5k" style="width: 100%; height: auto">
+Как видите, здесь представлены как слово, так и предложения, но слово выделено в предложении, что позволяет сразу изолировать важную информацию. Как только слово хорошо усвоено, повторение проходит быстрее, так как слово появляется первым. Вот оборотная сторона стандартной карточки:
 
-Contrary to most of the decks, here furigana gives the reading of the word, with the meaning right below. Audio for the word and for the sentence are then available for you. If you would like, you can also add pitch accent, see below. If there are notes related to that specifc card, they are displayed down below. 
+<img src="https://github.com/donkuri/Kaishi/blob/main/pics/kaishi-back.png" alt="Обратная сторона карточки в Kaishi 1.5k" style="width: 100%; height: auto">
 
-## Where do I get the deck?
+В отличие от большинства наборов, здесь фуригана дает чтение слова, а значение находится прямо под ним. Вам доступны аудиозаписи для слова и предложения. Если хотите, можете также добавить акцентирование высоты тона, см. ниже. Если есть заметки, относящиеся к конкретной карточке, они отображаются внизу.
 
-You can either get the deck on the [releases](https://github.com/donkuri/Kaishi/releases/) page of this GitHub or on [AnkiWeb](https://ankiweb.net/shared/info/1196762551), provided the deck is not undergoing review. **The deck is supported on Anki 2.1.50+.**
+## Где получить набор?
 
-## What options are available for the deck?
+Вы можете получить набор на [странице релизов](https://github.com/donkuri/Kaishi/releases/) этого GitHub или на [AnkiWeb](https://ankiweb.net/shared/info/1196762551), если набор не находится на проверке. **Набор поддерживается на Anki 2.1.50+**.
 
-There are multiple options you can use to change your cards. To modify them, select the Kaishi deck, click `Browse`, select any card from the deck, and click `Cards...` on the top right.
+## Какие опции доступны для набора?
 
-### Pitch Accent
+Существует множество опций для изменения ваших карточек. Чтобы изменить их, выберите набор Kaishi, нажмите `Browse`, выберите любую карточку из набора и нажмите `Cards...` в правом верхнем углу.
 
-The most important option is whether you would like to include pitch accent on your cards. Currently, whether one should learn pitch accent or not tends to spawn pretty heated arguments in the community. We decided to take a middle ground approach: the pitch accent data is there for you, you choose whether you want to use it. If you decide not to use it, you can always enable it later. The way you enable pitch accent is easy. Here is the card options under `Back Template` for the deck (click on the small dot above the `Search` bar.)
+### Акцентирование высоты тона
+
+Самая важная опция - это включение акцентирования высоты тона на ваших карточках. В настоящее время вопрос о том, следует ли изучать акцентирование высоты тона или нет, вызывает довольно горячие споры в сообществе. Мы решили занять среднюю позицию: данные об акцентировании высоты тона присутствуют, вы решаете, использовать их или нет. Если решите не использовать их, всегда можно включить позже. Включение акцентирования высоты тона просто. Вот настройки карточки в разделе `Back Template` для набора (нажмите на маленькую точку над строкой `Search`).
 
 ```CSS
 <div lang="ja">
 {{furigana:Word Furigana}}
 
-<!-- This part enables pitch accent.
+<!-- Этот блок включает акцентирование высоты тона.
 
 {{#Pitch Accent}}
 	<br><div style='font-size: 24px'>{{Pitch Accent}}</div>
-{{/Pitch Accent}} 
+{{/Pitch Accent}}
 
 -->
 
@@ -48,7 +50,7 @@ The most important option is whether you would like to include pitch accent on y
 	<div style="font-size: 20px; padding-top:12px">Note: {{Notes}}</div>
 {{/Notes}}
 
-<!-- This part enables pitch accent notes.
+<!-- Этот блок включает заметки об акцентировании высоты тона.
 
 {{#Pitch Accent Notes}}
 <div style="font-size: 20px; width: fit-content; max-width:40vw; margin: auto">
@@ -61,17 +63,16 @@ The most important option is whether you would like to include pitch accent on y
 -->
 
 </div>
-```
+Чтобы включить акцентирование высоты тона, просто удалите все части <!-- и -->, представляющие комментарии, вот так:
 
-To enable pitch accent, you simply need to take out all the `<!--` and `-->` parts which represent comments, like so: 
-
-```CSS
+CSS
+Copy code
 <div lang="ja">
 {{furigana:Word Furigana}}
 
 {{#Pitch Accent}}
 	<br><div style='font-size: 24px'>{{Pitch Accent}}</div>
-{{/Pitch Accent}} 
+{{/Pitch Accent}}
 
 <div style='font-size: 25px; padding-bottom:20px'>{{Word Meaning}}</div>
 <div style='font-size: 25px;'>{{furigana:Sentence Furigana}}</div>
@@ -96,7 +97,6 @@ To enable pitch accent, you simply need to take out all the `<!--` and `-->` par
 {{/Pitch Accent Notes}}
 
 </div>
-```
 
 ### Minor options
 
@@ -116,11 +116,12 @@ You could entirely change the type of cards you want to see. Here is the `Front 
 </div>
 ```
 
-As you can see, we only have the word and the sentence. If you would like *sentence* cards, simply take out the `{{Word}}` part, or put `Sentence` inside instead and take out the rest. If you would like *word* cards, simply take out the `<div style='font-size: 20px;'>{{Sentence}}</div>` part. If instead you would like *audio* cards, take out everything and add `{{Word Audio}}`, `{{Sentence Audio}}` or both if you would like both.
+Как видите, у нас есть только слово и предложение. Если вы хотите карточки *с предложением*, просто уберите часть `{{Word}}`, или вставьте `Sentence` вместо нее и уберите остальное. Если вы хотите карточки *со словом*, просто уберите `<div style='font-size: 20px;'>{{Sentence}}</div>`. Если же вы хотите карточки *с аудио*, уберите все и добавьте `{{Word Audio}}`, `{{Sentence Audio}}` или оба, если хотите оба варианта.
 
-#### Changing the fonts, font size or other styling options
+#### Изменение шрифтов, размера шрифта или других параметров стиля
 
-Here is the `Styling` template of Kaishi 1.5k:
+Вот шаблон `Styling` для Kaishi 1.5k:
+
 
 ```CSS
 .card {
@@ -141,71 +142,71 @@ max-width: 50vw;
 /* This part defines the bold color. */
 b{color: #5586cd}
 ```
+Вы можете найти различные параметры стилей [здесь](https://docs.ankiweb.net/templates/styling.html). Как видите, Kaishi 1.5k использует очень мало опций непосредственно на вкладке стилей. Вы можете изменить параметр `font-family`, чтобы получить разные шрифты, `font-size` для изменения размера шрифта и `text-align` для изменения выравнивания текста, например, если вы хотите, чтобы текст был выровнен по левому краю. По умолчанию Kaishi 1.5k выделяет **жирные** слова. Опция для изменения этого параметра — `b{color: }`, как показано выше. Просто вставьте hex-код или название цвета, например `red`, чтобы получить этот цвет. Если вы не хотите использовать цвет, просто уберите всю часть `b{color: }`.
 
-You can find the various styling options [here](https://docs.ankiweb.net/templates/styling.html). As you can see, Kaishi 1.5k uses very little options in the style tab directly. You can change the `font-family` option to get different fonts, `font-size` to change the font size and `text-align` to change the alignment of the text, for instance if you'd like the text to be left aligned. By default, Kaishi 1.5k colors **bold** words. The option to change this is `b{color: }` as you can see above. Simply put a hexcode or a color name like `red` to get that color instead. If you would like no color, simply take out the whole `b{color: }` part.
+## Как импортировать Kaishi 1.5k поверх другой колоды
 
-## How to import Kaishi 1.5k on top of another deck
+Если вы уже начали использовать Core2k или Tango N4-N5 (или другую подобную колоду) и хотите переключиться на Kaishi 1.5k, вы можете следовать этим шагам, написанным [Kuuube](https://github.com/Kuuuube).
 
-If you already started Core2k or Tango N4-N5 (or some other similar deck) and you would like to switch to Kaishi 1.5k, you can follow these steps written by [Kuuube](https://github.com/Kuuuube).
+1. Импортируйте Kaishi как обычно с файлом .apkg.
+2. Перейдите в `File > Export...` и экспортируйте колоду Kaishi, используя `Notes in Plain Text (.txt)`. Оставьте все остальные настройки по умолчанию.
+3. Удалите колоду Kaishi.
+4. Выберите колоду, на которую вы хотите импортировать Kaishi, выберите `Browse`, кликните любую карточку, нажмите `ctrl + a` и выберите `Notes > Change Note Type...` в верхнем левом меню.
+5. Измените тип заметки на `Kaishi 1.5k`. Убедитесь, что в столбце `New` в поле `Word` отображается поле, которое ваша колода использует для слова.
+    Если вы не собираетесь удалять какие-либо карточки из текущей колоды, которых нет в Kaishi, убедитесь, что ваши другие поля также выровнены по правильным местам. В противном случае, вы можете использовать настройки по умолчанию и нажать `Save`.
+6. Импортируйте файл Kaishi .txt, экспортированный на шаге 2.
+7. При импорте убедитесь, что тип заметки установлен на `Kaishi 1.5k`, а колода установлена на ту колоду, на которую вы хотите импортировать. 
+    Если вы собираетесь удалять карточки, которых нет в Kaishi, добавьте тег `Kaishi` в опцию `Tag all notes`.
+8. Нажмите `Import`.
+9. Чтобы удалить карточки, которых нет в Kaishi, выберите свою колоду, нажмите `Browse`, выберите свою колоду в левом меню, добавьте ` -tag:Kaishi` в строку поиска, выберите любую карточку, нажмите `ctrl + a`, в верхнем левом меню перейдите в `Notes > Delete`.
 
-1. Import Kaishi normally with the .apkg file.
-2. Go to `File > Export...` and export the Kaishi deck using `Notes in Plain Text (.txt)`. Leave all other settings default.
-3. Delete the Kaishi deck.
-4. Select the deck you want to import Kaishi on top of, select `Browse`, click any card, press `ctrl + a`, and select `Notes > Change Note Type...` on the top left menu.
-5. Change to the `Kaishi 1.5k` note type. Make sure the `Word` field in the `New` column shows the field your deck uses for the word next to it.
-    If you don't intend to delete any cards from your current deck that are not in Kaishi, make sure your other fields are lined up to the correct places too. Otherwise you can use the defaults and click `Save`.
-6. Import the Kaishi .txt file exported in step 2.
-7. When importing, make sure the Notetype is set to `Kaishi 1.5k` and the Deck is set to the deck you want to import on top of. 
-  If you intend on deleting cards not in Kaishi, add the tag `Kaishi` in the `Tag all notes` option.
-8. Click `Import`.
-9. To delete cards not in Kaishi, select your deck, click `Browse`, select your deck in left menu, append ` -tag:Kaishi` to the search bar, select any card, press `ctrl + a`, on the top left menu and go to `Notes > Delete`.
+**Если вы импортируете поверх Core 2.3k, пожалуйста, смотрите [здесь](https://github.com/Manhhao/anki.transfer-review-history).**
 
-**If you're importing on top of Core 2.3k, please see [this](https://github.com/Manhhao/anki.transfer-review-history).**
+## Происхождение колоды
 
-## The genesis of the deck
+Эта колода возникла из обсуждения между Tyogin и мной на [сервере TMW в Discord](https://learnjapanese.moe/join/). Мы оба сожалели о том, что популярные колоды для начинающих в то время имели раздражающие недостатки. Начинающие постоянно путались при использовании Core 2k и Tango из-за различных проблем. В Tango были некоторые редкие слова, такие как ナンプラー, что является тайским рыбным соусом, и многим людям не были интересны все базовые фразы и названия стран, занимающие большую часть колоды. Поля колоды были ужасно отформатированы, что делало невозможным использование колоды иначе, чем предполагалось изначально, а именно как карточки с предложениями. Core 2k, с другой стороны, была модульной, но имела множество ошибок в переводах, отсутствующие или нерелевантные картинки, а некоторые предложения были не очень полезными, иногда даже не отражали значение используемого слова.
 
-This deck has its origin in a discussion between Tyogin and myself in the [TMW discord server](https://learnjapanese.moe/join/). We were both lamenting the fact that the popular beginner decks at the time had annoying flaws. Beginners kept getting confused when using Core 2k and Tango due to various issues. Tango had some obscure words in it such as ナンプラー which is a Thai fish sauce and many people weren't really interested in all the basic phrases and country names taking up such a large amount of the deck. The deck's fields were formatted terribly which made it impossible to use the deck in a different way than was originally intended, which was sentence cards. Core 2k on the other hand was modular, but had multiple mistranslations, missing or unrelated pictures and some of the sentences weren't very useful, sometimes not even reflecting the meaning of the word used.
+Обе эти проблемы были достаточно раздражающими, что мы получали вопросы от начинающих каждые две недели. Tyogin предложил решить эту проблему самим, и была собрана небольшая команда для исправления этих проблем. Мы в основном взяли данные из Core2k, Core10k, Tango N4 и Tango N5. Затем мы объединили данные, отсортировали слова по частоте, используя различные частотные словари Yomichan/Yomitan, и выбрали около 1500 слов. Затем мы исправили переводы для каждого слова, выбрали лучшее предложение для каждого слова и исправили предложение, если это было необходимо. Нам пришлось исправить примерно 120 предложений из выбранных 1500. После этого мы сгенерировали аудио для слов, у которых не было правильного аудио, и команда из двух человек (Karifurai и cindsa) проверила данные о тоновом акценте, которые мы получили из [AJT Japanese](https://ankiweb.net/shared/info/1344485230), а также добавила заметки о тоновом акценте для слов, которым это было необходимо. Затем мы удалили тишину на карточках и нормализовали уровень звука между различными файлами. Помимо этого, мы также сгенерировали фуригану из AJT Japanese для слов и предложений. После этого мы разработали базовый CSS для карточек с целевыми подсказками, который используется в стандартной версии колоды. Наконец, несколько человек вычитали колоду, чтобы убедиться, что у нас как можно меньше ошибок.
 
-Both of these issues were annoying enough that we would get beginners asking questions about it every two weeks. Tyogin proposed we fix the issue ourselves and a small team was assembled to fix these issues. We mostly took data from Core2k, Core10k, Tango N4 and Tango N5. We then combined the data, sorted the words by frequency using various Yomichan/Yomitan frequency dictionaries and selected around 1500 words. We then fixed the translations for each word, chose the best sentence for each word and fixed the sentence if it needed fixing. We had to fix roughly 120 sentences out of the 1500 we chose. After this, we generated audio for words that were missing proper audio, and a team of two people (Karifurai and cindsa) verified the pitch accent data we got from [AJT Japanese](https://ankiweb.net/shared/info/1344485230) as well as adding pitch accent notes for words that needed it. We then took out silence on the cards and normalized the audio level between the various files. On top of that, we also generated furigana from AJT Japanese for the words and the sentences. After this, we designed a basic hint targeted sentences card CSS to be used on the default version of the deck. Finally, multiple people proofread the deck to make sure we had as few errors as possible.
+Kaishi, написанное как 開始, означает "начало". Мы подумали, что это подходит, поэтому решили использовать это название. Надеемся, что эта колода станет прекрасным началом вашего пути в изучении японского языка.
 
-Kaishi, written 開始 means "start, beginning". We thought this fit properly so we decided on this name. Hopefully, this deck will be a wonderful start to your Japanese learning journey.
+## Перевод колоды
 
-## Translation of the deck
+Если вы заинтересованы в переводе колоды на свой родной язык, пожалуйста, создайте проблему на [трекере GitHub](https://github.com/donkuri/Kaishi/issues).
 
-If you are interested in translating the deck in your native language, please make an issue on [the GitHub tracker](https://github.com/donkuri/Kaishi/issues).
+## Благодарности
 
-## Credits
+Эта колода была создана с помощью следующих людей:
 
-This deck was made with the help of these people:
+[栗](https://github.com/donkuri/) - главный архитектор, все технические аспекты, переводы, вычитка
 
-[栗](https://github.com/donkuri/) - main architect, all technical aspects, translations, proofreading
+Tyogin - главный архитектор, переупорядочил первые 200 карточек, изменил предложения, вычитка
 
-Tyogin - main architect, reordered the first 200 cards, changed the sentences, proofreading
+shoui - вычитка всей колоды, исправление переводов
 
-shoui - proofreading the entire deck, fixed translations
+Julian - помог добавлять заметки и проверял некоторые переводы предложений
 
-Julian - helped add notes and checked some sentence translations
+karifurai - проверил тоновый акцент для первых 750 карточек и добавил заметки о тоновом акценте
 
-karifurai - verified the pitch accent for the first 750 cards and added pitch notes
+cindsa - проверил тоновый акцент для последних 750 карточек и добавил заметки о тоновом акценте
 
-cindsa - verified the pitch accent for the last 750 cards and added pitch notes
+[Kuuube](https://github.com/Kuuuube) - предложил использование FFmpeg, написал раздел о переносе карточек в Kaishi 1.5k
 
-[Kuuube](https://github.com/Kuuuube) - suggested the use of FFmpeg, wrote the transferring cards to Kaishi 1.5k section above
+[stephenmk](https://github.com/stephenmk) - запустил инструмент Jmdict Furigana на Kaishi 1.5k для исправления фуриганы, см. версию v1.3.0
 
-[stephenmk](https://github.com/stephenmk) - ran the Jmdict Furigana tool on Kaishi 1.5k to fix furigana, see v1.3.0
+[Kaanium](https://github.com/kaanium) - помог создать скрипт для конвертации колоды в письменную версию
 
-[Kaanium](https://github.com/kaanium) - helped make a script to convert the deck to the writing version
+Эти инструменты были использованы при создании колоды:
 
-These tools were used in the creation of the deck:
+[AJT Japanese](https://github.com/Ajatt-Tools/Japanese) - тоновый акцент, фуригана и часть аудио были сгенерированы с использованием этого дополнения
 
-[AJT Japanese](https://github.com/Ajatt-Tools/Japanese) - pitch accent, furigana and some of the audio were generated using this add-on
+[FFmpeg](https://ffmpeg.org/) - использовался для удаления некоторых тихих частей в различных аудиофайлах
 
-[FFmpeg](https://ffmpeg.org/) - used to take out some silent parts in various audio files
+[Tenacity](https://tenacityaudio.org/) - использовался для редактирования звуковых обрезок в различных аудиофайлах
 
-[Tenacity](https://tenacityaudio.org/) - used to edit clipping sounds in various audio files
-
-We also got various ideas from multiple members of the TMW discord server, including the name of the deck itself.
-
+Мы также получили различные идеи от нескольких участников сервера TMW в Discord, включая название самой колоды.
 
 
+Переводили:
 
+NeonGooRoo - ручной перевод, проверка машинного перевода на правильность, организация и оформление.
